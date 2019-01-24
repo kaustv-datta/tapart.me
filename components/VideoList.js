@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 
 export default class VideoList extends React.Component {
   render() {
-    const video = this.props.video;
+    const currentVideo = this.props.video;
 
     return (
       <React.Fragment>
@@ -12,7 +12,7 @@ export default class VideoList extends React.Component {
           <Button
             key={i}
             raised
-            backgroundColor="black"
+            backgroundColor={currentVideo.title === video.title ? "darkgray" : "black"}
             title={video.title}
             onPress={() => {
               this.props.onClick(video.title);
